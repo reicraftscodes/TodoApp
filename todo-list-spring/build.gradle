@@ -1,78 +1,40 @@
 plugins {
-	id 'org.springframework.boot' version '2.3.4.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
-	id 'java'
-	id 'jacoco'
+    id 'org.springframework.boot' version '2.3.4.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+    id 'jacoco'
 }
 
 
-group = 'com.oocl'
+group = 'com.informatics'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 jacocoTestReport {
-	reports {
-		csv.enabled true
-	}
+    reports {
+        csv.enabled true
+    }
 }
 
 
 dependencies {
-	implementation group: 'com.h2database', name: 'h2', version: '1.4.200'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.3.1.RELEASE'
-	implementation 'org.springframework.boot:spring-boot-starter-web:2.3.1.RELEASE'
-	implementation group: 'org.flywaydb', name: 'flyway-core', version: '6.5.3'
-	runtimeOnly 'mysql:mysql-connector-java'
+    implementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.3.1.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.3.1.RELEASE'
+    implementation group: 'org.flywaydb', name: 'flyway-core', version: '6.5.3'
+    runtimeOnly 'mysql:mysql-connector-java'
 
-	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.3.1.RELEASE'
-	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
-	testImplementation group: 'com.google.code.gson', name: 'gson', version: '2.7'
-	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
-	testCompile "org.mockito:mockito-core:3.4.0"
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.3.1.RELEASE'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
+    testImplementation group: 'com.google.code.gson', name: 'gson', version: '2.7'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
+    testCompile "org.mockito:mockito-core:3.4.0"
 }
 
 test {
-	useJUnitPlatform()
-}
-
-
-import org.gradle.api.tasks.testing.logging.TestExceptionFormat
-import org.gradle.api.tasks.testing.logging.TestLogEvent
-
-tasks.withType(Test) {
-	testLogging {
-		events TestLogEvent.FAILED,
-				TestLogEvent.PASSED,
-				TestLogEvent.SKIPPED,
-				TestLogEvent.STANDARD_OUT
-		exceptionFormat TestExceptionFormat.FULL
-		showExceptions true
-		showCauses true
-		showStackTraces true
-
-		debug {
-			events TestLogEvent.STARTED,
-					TestLogEvent.FAILED,
-					TestLogEvent.PASSED,
-					TestLogEvent.SKIPPED,
-					TestLogEvent.STANDARD_ERROR,
-					TestLogEvent.STANDARD_OUT
-			exceptionFormat TestExceptionFormat.FULL
-		}
-		info.events = debug.events
-		info.exceptionFormat = debug.exceptionFormat
-
-		afterSuite { desc, result ->
-			if (!desc.parent) {
-				def output = "Results: ${result.resultType} (${result.testCount} tests, ${result.successfulTestCount} successes, ${result.failedTestCount} failures, ${result.skippedTestCount} skipped)"
-				def startItem = '|  ', endItem = '  |'
-				def repeatLength = startItem.length() + output.length() + endItem.length()
-				println('\n' + ('-' * repeatLength) + '\n' + startItem + output + endItem + '\n' + ('-' * repeatLength))
-			}
-		}
-	}
+    useJUnitPlatform()
 }

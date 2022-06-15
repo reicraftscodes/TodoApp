@@ -48,9 +48,9 @@ public class TodoServiceTest {
     }
 
     @Test
-    public void should_create_todo_with_text_Charlie_when_create_given_todo_with_id_1_text_Charlie() {
+    public void should_create_todo_with_text_Brix_when_create_given_todo_with_id_1_text_Brix() {
         //given
-        Todo newTodo = new Todo(1, "Charlie", true);
+        Todo newTodo = new Todo(1, "Brix", true);
         TodoRepository todoRepository = mock(TodoRepository.class);
         TodoService todoService = new TodoService(todoRepository);
         when(todoRepository.save(newTodo)).thenReturn(newTodo);
@@ -61,13 +61,13 @@ public class TodoServiceTest {
 
         //then
         assertEquals(1, todo.getId());
-        assertEquals("Charlie", todo.getText());
+        assertEquals("Brix", todo.getText());
     }
 
     @Test
     public void should_create_todo_with_done_true_when_create_given_todo_with_todo_done_true() {
         //given
-        Todo newTodo = new Todo(1, "Charlie", true);
+        Todo newTodo = new Todo(1, "Brix", true);
         TodoRepository todoRepository = mock(TodoRepository.class);
         TodoService todoService = new TodoService(todoRepository);
         when(todoRepository.save(newTodo)).thenReturn(newTodo);
@@ -78,14 +78,14 @@ public class TodoServiceTest {
 
         //then
         assertEquals(1, todo.getId());
-        assertEquals("Charlie", todo.getText());
+        assertEquals("Brix", todo.getText());
         assertTrue(todo.getDone());
     }
 
     @Test
     public void should_trigger_repository_once_when_service_delete_called_given_todo() {
         //given
-        Todo todo = new Todo(1, "Charlie", true);
+        Todo todo = new Todo(1, "Brix", true);
         TodoRepository todoRepository = mock(TodoRepository.class);
         when(todoRepository.findById(todo.getId())).thenReturn(Optional.of(todo));
         TodoService todoService = new TodoService(todoRepository);
@@ -100,8 +100,8 @@ public class TodoServiceTest {
     @Test
     public void should_return_updated_todo_done_true_when_update_given_todo_with_done_of_false() {
         //given
-        Todo todo = new Todo(1, "Charlie", false);
-        Todo updateTodo = new Todo(1, "Charlie", true);
+        Todo todo = new Todo(1, "Brix", false);
+        Todo updateTodo = new Todo(1, "Brix", true);
         Optional<Todo> optionalTodo = Optional.of(updateTodo);
         TodoRepository todoRepository = mock(TodoRepository.class);
         when(todoRepository.findById(todo.getId())).thenReturn(optionalTodo);
