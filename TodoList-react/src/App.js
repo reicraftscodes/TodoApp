@@ -2,7 +2,7 @@ import './App.css';
 import DoneListContainer from './containers/DoneListContainer';
 import { BrowserRouter, Route,Switch } from 'react-router-dom';
 import TodoListContainer from './containers/TodoListContainer';
-import logo from './images/leaf.png';
+import logo from './images/informatics.jpg';
 import Navigation from './components/Navigation';
 import NotFound from './components/NotFound';
 
@@ -13,8 +13,8 @@ function App() {
       <BrowserRouter>
       <header className="App-header">
         <span style={{display: 'inline-block' }}>
-          <h1 id="appName"><img src={logo} width="60" alt="logo" />TodoList</h1>
-          <p style={{marginTop: '-35px', color:'#178AD6'}}> Informatics School To-do list app</p>
+          <h1 id="appName"><img src={logo} width="150px" height="150px" alt="logo" /></h1>
+          {/*<p style={{marginTop: '35px', color:'#178AD6'}}> Informatics School To-do list app</p>*/}
         </span>
 
         <Navigation />

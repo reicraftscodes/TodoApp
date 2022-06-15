@@ -9,9 +9,12 @@
 }
 
 #appName {
-    color: #178AD6;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 60px
+    /*color: #178AD6;*/
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+    /*font-size: 60px;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .themeColor {
