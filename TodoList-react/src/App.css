@@ -61,10 +61,9 @@ input#todoInput:focus, #todoItem:focus {
 
 #todoItem {
     /*checklist color*/
-    color: #f3f3f3;
-    border: #178ad6;
+    color: #ffffff;
     margin: auto;
-    border: 2px solid #178ad6;
+    border: 2px solid #417cca;
     height: 50px;
     margin-bottom: 5px;
     text-align: left;
@@ -76,8 +75,8 @@ input#todoInput:focus, #todoItem:focus {
 
 /*delete to dos*/
 .col-8 {
-    background-color: #178ad6;
-    border-color: rgb(150, 120, 120);
+    background-color: #417cca;
+    border-color: rgb(246, 246, 246);
     float: left;
     width: 8%;
     text-align: center;
@@ -100,7 +99,7 @@ input#todoInput:focus, #todoItem:focus {
 body {
     margin: 0;
     padding: 0;
-    background: #232323;
+    background: #181818;
     font-family: "Avenir Next", "Avenir", sans-serif;
 }
 
