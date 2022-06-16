@@ -56,7 +56,7 @@ class TodoGenerator extends Component {
           layout="horizontal"
           className="todo-form"
         >
-          <Row gutter={20}>
+          <Row gutter={5}>
             <Col xs={24} sm={24} md={17} lg={19} xl={20}>
               <Form.Item
                 name="text"
@@ -67,7 +67,7 @@ class TodoGenerator extends Component {
             </Col>
             <Col xs={24} sm={24} md={7} lg={5} xl={4}>
               <Button type="primary" htmlType="submit" block>
-                <PlusCircleFilled />
+                <PlusCircleFilled /> Add
               </Button>
             </Col>
           </Row>
