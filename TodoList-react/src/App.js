@@ -13,8 +13,7 @@ function App() {
       <BrowserRouter>
       <header className="App-header">
         <span style={{display: 'inline-block' }}>
-          <h1 id="appName"><img src={logo} width="150px" height="150px" alt="logo" /></h1>
-          {/*<p style={{marginTop: '35px', color:'#178AD6'}}> Informatics School To-do list app</p>*/}
+          <h1 id="appName"><img src={logo} width="150px" height="150px" alt="logo" /> Spring React Todo list</h1>
         </span>
 
         <Navigation />
