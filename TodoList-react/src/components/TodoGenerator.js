@@ -66,7 +66,7 @@ class TodoGenerator extends Component {
               </Form.Item>
             </Col>
             <Col xs={24} sm={24} md={7} lg={5} xl={4}>
-              <Button type="primary" htmlType="submit" block>
+              <Button type="default" htmlType="submit" block>
                 <PlusCircleFilled /> Add
               </Button>
             </Col>
