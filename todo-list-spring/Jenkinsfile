@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo 'Running Unit Tests..'
                 withGradle {
-                    sh './gradlew test --tests com.oocl.todoapp.unit*'
+                    sh './gradlew test --tests com.reicraftscodes.todoapp.unit*'
                 }
             }
         }
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 echo 'Running Integration Tests..'
                 withGradle {
-                    sh './gradlew test --tests com.oocl.todoapp.Integration*'
+                    sh './gradlew test --tests com.reicraftscodes.todoapp.Integration*'
                 }
             }
         }
