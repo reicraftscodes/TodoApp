@@ -2,7 +2,7 @@ import './App.css';
 import DoneListContainer from './containers/DoneListContainer';
 import { BrowserRouter, Route,Switch } from 'react-router-dom';
 import TodoListContainer from './containers/TodoListContainer';
-import logo from './images/informatics.jpg';
+import logo from './images/leaf.png';
 import Navigation from './components/Navigation';
 import NotFound from './components/NotFound';
 
